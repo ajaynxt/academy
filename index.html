@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Premium school and coaching academy concept with admissions, courses, scholarship test and counselling.">
+  <meta name="theme-color" content="#071426">
+  <title>EDVANTA Academy | AJAYNXT</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style id="hero-info-box-styles">
+    /* Photo-first hero: detailed content stays inside one compact, clickable box. */
+    .hero-grid{grid-template-columns:1fr;min-height:690px;padding-bottom:90px}
+    .hero-copy{max-width:780px;position:relative;z-index:2}
+    .hero-info-box{position:absolute;right:0;bottom:38px;z-index:12;width:86px}
+    .hero-info-box summary{list-style:none;width:86px;min-height:78px;padding:10px 8px;border:1px solid rgba(255,255,255,.32);border-radius:20px;background:rgba(5,16,31,.72);backdrop-filter:blur(18px);box-shadow:0 18px 55px rgba(0,0,0,.34);display:grid;place-items:center;gap:2px;color:#fff;cursor:pointer;user-select:none;transition:.25s}
+    .hero-info-box summary::-webkit-details-marker{display:none}
+    .hero-info-box summary:hover,.hero-info-box summary:focus-visible{transform:translateY(-3px);border-color:var(--accent);outline:none}
+    .hero-info-box .info-icon{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--accent);font:900 18px/1 Georgia,serif;box-shadow:0 8px 22px rgba(var(--accent-rgb),.35)}
+    .hero-info-box .info-label{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .hero-info-box .info-open-label{display:none}
+    .hero-info-box[open] .info-closed-label{display:none}
+    .hero-info-box[open] .info-open-label{display:block}
+    .hero-info-box[open] summary{border-color:var(--accent)}
+    .hero-info-panel{position:absolute;right:0;bottom:94px;width:min(560px,calc(100vw - 44px));max-height:min(72vh,690px);overflow:auto;padding:22px;border:1px solid rgba(255,255,255,.2);border-radius:24px;background:rgba(5,16,31,.94);backdrop-filter:blur(24px);box-shadow:0 34px 100px rgba(0,0,0,.58);color:#fff;animation:heroInfoIn .25s ease-out}
+    .hero-info-panel::-webkit-scrollbar{width:7px}.hero-info-panel::-webkit-scrollbar-thumb{background:rgba(255,255,255,.22);border-radius:20px}
+    .hero-info-heading{padding-right:20px;margin-bottom:14px}
+    .hero-info-heading h2{font-size:28px;line-height:1.05;margin:7px 0 8px}
+    .hero-info-panel #heroText{color:#cdd9e8;margin:0 0 16px;font-size:15px}
+    .hero-info-panel .hero-trust{margin-bottom:18px;gap:10px}
+    .hero-info-panel .hero-trust span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.07);font-size:11px}
+    .hero-info-box .hero-card{position:static!important;right:auto!important;top:auto!important;bottom:auto!important;width:100%!important;min-height:0!important;order:initial!important;border-radius:18px!important;padding:20px!important;background:rgba(255,255,255,.07)!important;box-shadow:none!important;text-align:left!important}
+    .hero-info-box .hero-card h2{font-size:28px;margin:8px 0}
+    .hero-info-box .hero-card-facts{margin:16px 0;grid-template-columns:repeat(3,1fr)}
+    .hero-info-box .course-finder{position:static;width:100%;margin:14px 0 0;padding:16px;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.07);border-radius:18px}
+    .hero-info-box .course-finder .button{grid-column:1/-1;width:100%}
+    .hero-info-box .course-finder select{background:#071426;color:#fff}
+    @keyframes heroInfoIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+    @media(max-width:1000px){
+      .hero-grid{min-height:720px;padding-top:78px;padding-bottom:108px}
+      .hero-info-box{right:4px;bottom:28px}
+      .hero.hero-05 .hero-copy{text-align:left}.hero.hero-05 .hero-actions{justify-content:flex-start}
+    }
+    @media(max-width:650px){
+      .hero{min-height:760px;padding-bottom:0}
+      .hero-grid{min-height:690px;padding-bottom:105px;align-items:center}
+      .hero-copy{max-width:92%}
+      .hero h1{font-size:clamp(44px,13vw,60px)}
+      .hero-info-box{position:absolute;right:0;bottom:18px}
+      .hero-info-panel{position:fixed;left:12px;right:12px;bottom:78px;width:auto;max-height:70vh;padding:18px;border-radius:20px}
+      .hero-info-box .course-finder{grid-template-columns:1fr}
+      .hero-info-box .course-finder .button{grid-column:auto}
+      .hero-info-box .hero-card-facts{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media(prefers-reduced-motion:reduce){.hero-info-panel{animation:none}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="header">
+  <div class="shell nav">
+    <a class="brand" href="#home" aria-label="Edvanta Academy home">
+      <span class="brand-mark"><i></i><b>E</b></span>
+      <span><strong>EDVANTA</strong><small>ACADEMY</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false">Menu</button>
+    <nav id="navLinks">
+      <a href="#courses">Courses</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#results">Results</a>
+      <a href="#faculty">Faculty</a>
+      <a href="#scholarship">Scholarship</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="button primary nav-cta" href="#demo">Book Demo Class</a>
+  </div>
+</header>
+
+<aside class="customizer" aria-label="Website design controls">
+  <button class="customizer-toggle" id="customizerToggle">Customize</button>
+  <div class="customizer-panel" id="customizerPanel">
+    <section><h3>Hero Styles</h3><div class="style-list" id="styleList"></div></section>
+    <section>
+      <h3>Color Library</h3>
+      <input id="colorSearch" type="search" placeholder="Search color or enter #HEX">
+      <div class="color-list" id="colorList"></div>
+      <div class="two-col"><input id="colorPicker" type="color" value="#2d7cff" aria-label="Choose accent color"><button id="lockColor">Lock Color</button></div>
+    </section>
+    <section><h3>Text Library</h3><div class="text-list" id="textList"></div><button class="full-control" id="lockText">Lock Text</button></section>
+    <section>
+      <h3>Font Library</h3>
+      <input id="fontSearch" type="search" placeholder="Search font">
+      <select id="fontSelect">
+        <option value="Inter, Arial, sans-serif">Inter</option>
+        <option value="Manrope, Arial, sans-serif">Manrope</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Trebuchet MS', Arial, sans-serif">Trebuchet</option>
+        <option value="'Times New Roman', serif">Times New Roman</option>
+        <option value="Arial, sans-serif">Arial</option>
+      </select>
+      <button class="full-control" id="lockFont">Lock Font</button>
+    </section>
+    <section class="two-col"><button id="themeToggle">Light Mode</button><button id="autoToggle">Pause Auto</button></section>
+  </div>
+</aside>
+
+<main id="main">
+  <section class="hero hero-01" id="home">
+    <div class="hero-photo" id="heroPhoto"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-grid shell">
+      <div class="hero-copy reveal">
+        <span class="eyebrow" id="heroKicker">Admissions Open · Classroom & Online Learning</span>
+        <h1 id="heroTitle">Build Strong Concepts. Aim Higher.</h1>
+        <div class="hero-actions">
+          <a class="button primary" href="#courses">Explore Courses</a>
+          <a class="button glass" href="#demo">Book Free Demo</a>
+        </div>
+      </div>
+
+      <details class="hero-info-box reveal" id="heroInfoBox">
+        <summary aria-label="Open programme and course details">
+          <span class="info-icon" aria-hidden="true">i</span>
+          <span class="info-label info-closed-label">Details</span>
+          <span class="info-label info-open-label">Close</span>
+        </summary>
+        <div class="hero-info-panel">
+          <div class="hero-info-heading">
+            <span class="mini-label">Academy Information</span>
+            <h2>Programme details & course finder</h2>
+          </div>
+          <p id="heroText">A modern academy experience for school students, JEE, NEET, foundation and skill-based learning with clear courses, counselling and admission support.</p>
+          <div class="hero-trust"><span>Course Guidance</span><span>Scholarship Test</span><span>Parent Counselling</span></div>
+
+          <aside class="hero-card">
+            <span class="mini-label" id="heroCardLabel">Featured Programme</span>
+            <h2 id="heroCardTitle">JEE Foundation Track</h2>
+            <p id="heroCardText">Class 9–10 · Science, Mathematics, Mental Ability and problem-solving</p>
+            <div class="hero-card-facts"><span><b>2</b> years</span><span><b>4</b> subjects</span><span><b>Hybrid</b> mode</span></div>
+            <a class="button primary" href="#contact">Speak to a Counsellor</a>
+          </aside>
+
+          <form class="course-finder" id="courseFinder">
+            <label>Student Class<select id="finderClass"><option value="All">Select Class</option><option>Class 6–8</option><option>Class 9–10</option><option>Class 11–12</option><option>Dropper</option><option>Graduation</option></select></label>
+            <label>Goal<select id="finderGoal"><option value="All">Select Goal</option><option>School Excellence</option><option>JEE</option><option>NEET</option><option>Foundation</option><option>Olympiad</option><option>Spoken English</option><option>Computer Skills</option></select></label>
+            <label>Learning Mode<select id="finderMode"><option value="All">Any Mode</option><option>Classroom</option><option>Online</option><option>Hybrid</option></select></label>
+            <label>City<select id="finderCity"><option value="All">All Centres</option><option>Jaipur</option><option>Delhi NCR</option><option>Kota</option><option>Online</option></select></label>
+            <button class="button primary" type="submit">Find My Course</button>
+          </form>
+        </div>
+      </details>
+    </div>
+
+    <div class="style-controller shell">
+      <button id="previousStyle" aria-label="Previous hero style">‹</button>
+      <div id="styleDots"></div>
+      <button id="nextStyle" aria-label="Next hero style">›</button>
+      <span id="styleName">01 · Modern Coaching</span>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="shell"><span>Course Comparison</span><span>Demo-Class Booking</span><span>Scholarship Registration</span><span>Fee Enquiry</span><span>Results & Student Zone</span></div>
+  </section>
+
+  <section class="section shell" id="courses">
+    <div class="section-heading reveal">
+      <div><span class="eyebrow">Academic Programmes</span><h2>Choose by class, goal and learning mode</h2></div>
+      <p>Parents and students should see eligibility, duration, subjects, mode and the next admission step before sharing their phone number.</p>
+    </div>
+    <div class="result-bar reveal"><span id="courseCount">8 courses available</span><button id="clearCourseFilter">Show All Courses</button></div>
+    <div class="course-grid" id="courseGrid"></div>
+  </section>
+
+  <section class="section demo-section" id="demo">
+    <div class="shell demo-grid">
+      <div class="reveal">
+        <span class="eyebrow">Experience Before Enrolment</span>
+        <h2>Book a demo class and meet the teaching approach.</h2>
+        <p>A demo request should capture the class, goal, subject and preferred mode, then route the enquiry to a counsellor through WhatsApp.</p>
+        <div class="demo-benefits"><span>Live teaching sample</span><span>Course-fit discussion</span><span>Study plan overview</span><span>Parent Q&A</span></div>
+      </div>
+      <form class="form-card reveal" id="demoForm">
+        <label>Student Name<input name="student" required></label>
+        <label>Parent / Guardian<input name="parent"></label>
+        <label>Phone / WhatsApp<input name="phone" inputmode="tel" required></label>
+        <label>Current Class<select name="class"><option>Class 6–8</option><option>Class 9–10</option><option>Class 11–12</option><option>Dropper</option><option>Graduation</option></select></label>
+        <label>Goal<select name="goal"><option>School Excellence</option><option>JEE</option><option>NEET</option><option>Foundation</option><option>Olympiad</option><option>Spoken English</option></select></label>
+        <label>Preferred Mode<select name="mode"><option>Classroom</option><option>Online</option><option>Hybrid</option></select></label>
+        <button class="button primary full" type="submit">Book Demo on WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section scholarship-section" id="scholarship">
+    <div class="shell scholarship-grid">
+      <div class="scholarship-photo reveal"></div>
+      <div class="reveal">
+        <span class="eyebrow">Admission & Scholarship Test</span>
+        <h2>One registration flow, with every condition explained.</h2>
+        <p>Use verified eligibility, syllabus, dates, mode, result timeline and scholarship rules. Avoid headline percentages without written terms.</p>
+        <div class="test-details">
+          <article><b>60 min</b><span>Sample test duration</span></article>
+          <article><b>Online / Centre</b><span>Choose test mode</span></article>
+          <article><b>Class 6–12</b><span>Example eligibility</span></article>
+          <article><b>Merit Based</b><span>Scholarship assessment</span></article>
+        </div>
+        <button class="button primary" id="scholarshipButton">Register for Scholarship Test</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section results-section" id="results">
+    <div class="shell">
+      <div class="section-heading reveal">
+        <div><span class="eyebrow">Verified Results</span><h2>Results should be searchable, dated and attributable</h2></div>
+        <p>Publish only verified marks, percentiles or ranks with student and parent permission. The cards below are illustrative portfolio content.</p>
+      </div>
+      <div class="result-tabs" id="resultTabs"></div>
+      <div class="student-results" id="studentResults"></div>
+      <form class="result-checker reveal" id="resultChecker">
+        <div><span class="eyebrow">Student Result Portal</span><h3>Check a test result</h3></div>
+        <label>Application / Roll Number<input name="roll" required></label>
+        <label>Student Name<input name="name" required></label>
+        <button class="button primary" type="submit">Check Result</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section shell" id="faculty">
+    <div class="section-heading reveal">
+      <div><span class="eyebrow">Faculty & Mentors</span><h2>Show who teaches, what they teach and how students are supported</h2></div>
+      <p>Replace concept profiles with real qualifications, subject expertise, experience and verified photographs.</p>
+    </div>
+    <div class="faculty-grid">
+      <article class="faculty-card reveal"><div class="faculty-photo f1"></div><h3>Dr. Arjun Mehta</h3><p>Physics Mentor · JEE Track</p><span>Concept profile</span></article>
+      <article class="faculty-card reveal"><div class="faculty-photo f2"></div><h3>Neha Sharma</h3><p>Chemistry Mentor · NEET Track</p><span>Concept profile</span></article>
+      <article class="faculty-card reveal"><div class="faculty-photo f3"></div><h3>Raghav Rao</h3><p>Mathematics Mentor · Foundation</p><span>Concept profile</span></article>
+      <article class="faculty-card reveal"><div class="faculty-photo f4"></div><h3>Priya Nair</h3><p>Academic Counsellor</p><span>Concept profile</span></article>
+    </div>
+  </section>
+
+  <section class="section admissions-section" id="admissions">
+    <div class="shell">
+      <div class="section-heading reveal">
+        <div><span class="eyebrow">Admissions</span><h2>A simple path from enquiry to first class</h2></div>
+        <p>Every step should explain what the student needs to submit, what the academy will confirm and when fees are due.</p>
+      </div>
+      <div class="admission-steps">
+        <article class="reveal"><b>01</b><h3>Course Guidance</h3><p>Class, goal, learning needs, schedule and preferred mode.</p></article>
+        <article class="reveal"><b>02</b><h3>Demo or Test</h3><p>Attend a demo class or register for the applicable admission test.</p></article>
+        <article class="reveal"><b>03</b><h3>Fee & Scholarship</h3><p>Receive the verified fee structure, scholarship terms and payment schedule.</p></article>
+        <article class="reveal"><b>04</b><h3>Document Check</h3><p>Student identity, previous class details and required academic records.</p></article>
+        <article class="reveal"><b>05</b><h3>Batch Allocation</h3><p>Centre, batch timing, faculty, study material and first-class date.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fees-section">
+    <div class="shell fees-grid">
+      <div class="reveal">
+        <span class="eyebrow">Fee Enquiry</span>
+        <h2>Show the fee structure with its conditions, not only “starts from”.</h2>
+        <p>Select a sample programme to see the information structure. Final fees and scholarships must come from the client’s verified admission policy.</p>
+        <div class="fee-selector" id="feeSelector"></div>
+      </div>
+      <article class="fee-card reveal">
+        <span id="feeCourse">JEE Foundation</span>
+        <strong id="feeAmount">Request Verified Fee</strong>
+        <div id="feeFacts"></div>
+        <button class="button primary" id="feeEnquiry">Get Fee Details on WhatsApp</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="section campus-section">
+    <div class="shell campus-grid">
+      <div class="campus-photo reveal"></div>
+      <div class="reveal">
+        <span class="eyebrow">Learning Environment</span>
+        <h2>Classrooms, study support and parent communication</h2>
+        <p>Help families understand the actual learning environment, batch size policy, doubt support, test schedule and communication process.</p>
+        <div class="campus-features"><span>Classroom and hybrid batches</span><span>Doubt-resolution sessions</span><span>Periodic assessments</span><span>Parent progress updates</span><span>Study material</span><span>Academic counselling</span></div>
+        <button class="button primary" id="centreVisit">Book a Centre Visit</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section resources-section">
+    <div class="shell">
+      <div class="section-heading reveal">
+        <div><span class="eyebrow">Student Resources</span><h2>Useful academic tools, not a decorative download shelf</h2></div>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card reveal"><h3>Course Brochure</h3><p>Eligibility, duration, subjects, modes and admission steps.</p><button data-resource="Course Brochure">Request Brochure</button></article>
+        <article class="resource-card reveal"><h3>Scholarship Syllabus</h3><p>Class-wise syllabus, pattern and sample-paper details.</p><button data-resource="Scholarship Syllabus">Request Syllabus</button></article>
+        <article class="resource-card reveal"><h3>Batch Schedule</h3><p>Centre, start date, class days and approximate timings.</p><button data-resource="Batch Schedule">Check Schedule</button></article>
+        <article class="resource-card reveal"><h3>Student Zone</h3><p>Tests, results, attendance and learning resources.</p><button id="studentZone">Open Student Zone</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="shell faq-grid">
+      <div class="reveal"><span class="eyebrow">Parent & Student FAQs</span><h2>Answer the questions that delay admission decisions</h2></div>
+      <div class="faq-list reveal">
+        <details><summary>Can we attend a demo class before admission?</summary><p>Yes. The demo request should be confirmed by the centre or online academic team based on the relevant course and batch.</p></details>
+        <details><summary>How are scholarship benefits decided?</summary><p>Scholarship eligibility should be based on the published test, result and admission policy. Applicable terms must be provided in writing.</p></details>
+        <details><summary>Are online and classroom courses the same?</summary><p>Course coverage may be similar, but timings, interaction, tests, support and material delivery can differ. Compare the specific programme details.</p></details>
+        <details><summary>Are the results and faculty profiles here real?</summary><p>No. This is a portfolio concept and all result profiles, fees and faculty details must be replaced with verified client information.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contact">
+    <div class="shell contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">Build With AJAYNXT</span>
+        <h2>Turn course interest into organised admissions.</h2>
+        <p>This concept routes enquiries to AJAYNXT. Replace the academy name, photographs, fees, results, scholarship rules and contact details before a client launch.</p>
+        <div class="contact-points"><span>School websites</span><span>Coaching institute websites</span><span>Course landing pages</span></div>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <label>Name<input name="name" required></label>
+        <label>Institute / School<input name="institute"></label>
+        <label>Phone / WhatsApp<input name="phone" inputmode="tel" required></label>
+        <label>Website Type<select name="type"><option>Coaching Institute</option><option>School Website</option><option>Online Academy</option><option>Course Landing Page</option></select></label>
+        <label class="full">Message<textarea name="message" rows="5"></textarea></label>
+        <button class="button primary full" type="submit">Send Enquiry</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell footer-grid">
+    <div><a class="brand" href="#home"><span class="brand-mark"><i></i><b>E</b></span><span><strong>EDVANTA</strong><small>ACADEMY</small></span></a><p>Education website concept by AJAYNXT.</p></div>
+    <div><strong>Explore</strong><a href="#courses">Courses</a><a href="#scholarship">Scholarship</a><a href="#results">Results</a></div>
+    <div><strong>AJAYNXT</strong><a href="https://ajaynxt.com">ajaynxt.com</a><a href="tel:+919929562585">+91 99295 62585</a></div>
+  </div>
+  <div class="shell footer-bottom">Concept content only. Course details, fees, scholarships, faculty and results are illustrative.</div>
+</footer>
+
+<div class="mobile-actions"><a href="tel:+919929562585">Call</a><a href="https://wa.me/919929562585">WhatsApp</a><a href="#demo">Demo</a><a href="#courses">Courses</a></div>
+
+<div class="modal" id="resultModal" role="dialog" aria-modal="true" aria-labelledby="resultModalTitle">
+  <div class="modal-card"><button class="modal-close" id="modalClose">×</button><span class="eyebrow">Result Portal</span><h2 id="resultModalTitle">Result Not Connected</h2><p>Connect this form to the institute’s verified result database or student portal.</p></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
